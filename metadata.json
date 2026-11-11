@@ -1,0 +1,6 @@
+{
+  "name": "AstraAI - Multi-Tenant Mobile Assistant",
+  "description": "Production-ready personalized mobile AI assistant with native hardware controls, smart deep linking, proactive scheduled reminders, and pgvector long-term memory.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

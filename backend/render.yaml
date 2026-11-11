@@ -1,0 +1,26 @@
+# Render Blueprint Specification for AstraAI (Free Tier)
+# Deploy with zero cost on Render + Supabase Free PostgreSQL
+services:
+  - type: web
+    name: astra-ai-backend
+    env: python
+    region: singapore # Closest to India (Asia/Kolkata) for lowest latency
+    plan: free
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    autoDeploy: true
+    healthCheckPath: /api/v1/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.8
+      - key: GEMINI_API_KEY
+        sync: false # Set in Render Dashboard -> Environment
+      - key: DATABASE_URL
+        sync: false # Paste Supabase PostgreSQL Connection String (Pooler: port 6543)
+      - key: PING_INTERVAL_MINUTES
+        value: 10 # Keeps Render web service awake 24/7 without sleeping!
+      - key: APP_URL
+        fromService:
+          type: web
+          name: astra-ai-backend
+          property: host

@@ -1,0 +1,38 @@
+name: astra_assistant
+description: "A production-grade Personalized Mobile AI Assistant with native OS hardware hooks, smart deep linking, and proactive habit reminders."
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.2.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Networking & State Management
+  http: ^1.2.1
+  flutter_riverpod: ^2.5.1
+
+  # Native Android Hardware Hooks (Clock Alarms & Intents)
+  android_intent_plus: ^5.0.2
+
+  # Universal Deep Linking & Web Fallbacks
+  url_launcher: ^6.3.0
+
+  # Cross-platform Local Notifications (iOS & Android)
+  flutter_local_notifications: ^17.1.2
+
+  # Utilities & Formatting
+  intl: ^0.19.0
+  uuid: ^4.4.0
+  flutter_animate: ^4.5.0
+  speech_to_text: ^6.6.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
